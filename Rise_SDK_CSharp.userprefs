@@ -1,0 +1,25 @@
+﻿<Properties StartupItem="Rise_SDK_CSharp_Tests/Rise_SDK_CSharp_Tests.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Rise_SDK_CSharp_Tests/RunTests.cs">
+    <Files>
+      <File FileName="Rise_SDK_CSharp/Rise_SDK_CSharp.csproj" Line="1" Column="1" />
+      <File FileName="Rise_SDK_CSharp/RiseSDK.cs" Line="9" Column="21" />
+      <File FileName="Rise_SDK_CSharp_Tests/RunTests.cs" Line="15" Column="1" />
+      <File FileName="Rise_SDK_CSharp/API/Accounts.cs" Line="1" Column="1" />
+      <File FileName="Rise_SDK_CSharp/API/Blocks.cs" Line="1" Column="1" />
+      <File FileName="Rise_SDK_CSharp/API/Delegates.cs" Line="1" Column="1" />
+      <File FileName="Rise_SDK_CSharp/API/Helpers.cs" Line="1" Column="1" />
+      <File FileName="Rise_SDK_CSharp/API/Loader.cs" Line="1" Column="1" />
+      <File FileName="Rise_SDK_CSharp/API/MultiSignatures.cs" Line="1" Column="1" />
+      <File FileName="Rise_SDK_CSharp/API/Peers.cs" Line="1" Column="1" />
+      <File FileName="Rise_SDK_CSharp/API/Signatures.cs" Line="1" Column="1" />
+      <File FileName="Rise_SDK_CSharp/API/Transactions.cs" Line="3" Column="8" />
+      <File FileName="Rise_SDK_CSharp/packages.config" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Rise__SDK__CSharp__Tests PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

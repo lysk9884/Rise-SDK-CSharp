@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rise_SDK_CSharp", "Rise_SDK_CSharp\Rise_SDK_CSharp.csproj", "{ADFCC380-233F-4EB0-A949-D589CA584E5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rise_SDK_CSharp_Tests", "Rise_SDK_CSharp_Tests\Rise_SDK_CSharp_Tests.csproj", "{EE219297-FD12-4A13-B489-58DE2B49F035}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADFCC380-233F-4EB0-A949-D589CA584E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADFCC380-233F-4EB0-A949-D589CA584E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADFCC380-233F-4EB0-A949-D589CA584E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADFCC380-233F-4EB0-A949-D589CA584E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE219297-FD12-4A13-B489-58DE2B49F035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE219297-FD12-4A13-B489-58DE2B49F035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE219297-FD12-4A13-B489-58DE2B49F035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE219297-FD12-4A13-B489-58DE2B49F035}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
