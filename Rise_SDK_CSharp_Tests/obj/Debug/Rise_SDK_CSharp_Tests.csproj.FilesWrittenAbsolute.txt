@@ -1,9 +1,0 @@
-/Users/nathan/Rise-SDK-CSharp/Rise_SDK_CSharp_Tests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/nathan/Rise-SDK-CSharp/Rise_SDK_CSharp_Tests/bin/Debug/Rise_SDK_CSharp_Tests.exe.mdb
-/Users/nathan/Rise-SDK-CSharp/Rise_SDK_CSharp_Tests/bin/Debug/Rise_SDK_CSharp_Tests.exe
-/Users/nathan/Rise-SDK-CSharp/Rise_SDK_CSharp_Tests/obj/Debug/Rise_SDK_CSharp_Tests.exe
-/Users/nathan/Rise-SDK-CSharp/Rise_SDK_CSharp_Tests/obj/Debug/Rise_SDK_CSharp_Tests.exe.mdb
-/Users/nathan/Rise-SDK-CSharp/Rise_SDK_CSharp_Tests/bin/Debug/Rise_SDK_CSharp.dll
-/Users/nathan/Rise-SDK-CSharp/Rise_SDK_CSharp_Tests/bin/Debug/Rise_SDK_CSharp.dll.mdb
-/Users/nathan/Rise-SDK-CSharp/Rise_SDK_CSharp_Tests/bin/Debug/RestSharp.dll
-/Users/nathan/Rise-SDK-CSharp/Rise_SDK_CSharp_Tests/bin/Debug/Newtonsoft.Json.dll
