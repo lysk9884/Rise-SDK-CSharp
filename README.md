@@ -4,7 +4,7 @@
 
 Rise meets C#.Net
 
-The Rise C# SDK is cross platform library based on Rise (https://rise.vision) and entirely rewritten in C#. The Rise C# SDK is a library which supports Windows, Linux, Mac, and Xamarin mobile (Android, Windows Phone and Ios). Check the github wiki for the full documentation.
+The Rise C# SDK is cross platform library based on Rise (https://rise.vision) and entirely rewritten in C#. The Rise C# SDK is a library which supports Windows, Linux, Mac, and Xamarin mobile (Android, Windows Phone and iOS). Check the github wiki for the full documentation. (https://github.com/RiseVision/Rise-SDK-CSharp/wiki)
 
 #### Third party dependencies
 1. Newtonsoft.json

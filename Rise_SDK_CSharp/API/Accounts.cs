@@ -36,7 +36,7 @@
 					return Helpers.request("GET", "/api/accounts/delegates?address=" + address);
 				}
 
-				public static dynamic putDelegates(string secret, string publicKey, string delegates, string secondSecret = null)
+				public static dynamic putDelegates(string secret, string publicKey, string[] delegates, string secondSecret = null)
 				{
 					dynamic options = new { secret = secret, publicKey = publicKey, delegates = delegates };
 					if (secondSecret != null)
