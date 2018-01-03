@@ -93,7 +93,7 @@ namespace RiseSharp.Core.Common
 
                     if (!string.IsNullOrWhiteSpace(SignSignature))
                     {
-                        writer.Write(Signature.FromHex());
+                        writer.Write(SignSignature.FromHex());
                     }
 
                 }

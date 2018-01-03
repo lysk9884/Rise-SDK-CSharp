@@ -103,7 +103,7 @@ namespace RiseSharp.Tests
         {
             var recId = "15624059065781496142R";
 
-            long amount = (long)(0.1f * Math.Pow(10, 8));
+            long amount = (long)(2 * Math.Pow(10, 8));
             var trs = new Core.Common.Transaction
             {
                 Type = TransactionType.Send,
@@ -113,7 +113,7 @@ namespace RiseSharp.Tests
                 Timestamp = TransactionHelper.GetUnixTransactionTime()
             };
 
-            TransactionHelper.SignTransaction(ref trs, _secret);
+            TransactionHelper.SignTransaction(ref trs, _secret , _secondSecret);
 
             var req = new PeerTransactionsRequest { Transaction = trs };
             var response = await _api.SendTransactionAsync(req);
