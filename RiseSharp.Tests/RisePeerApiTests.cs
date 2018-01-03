@@ -30,7 +30,7 @@ namespace RiseSharp.Tests
                 UseHttps = true
             });
 
-            _secret = "";
+            _secret = "cabbage chief join task universe hello grab slush page exit update brisk";
         }
 
         #region Peer related tests
@@ -64,62 +64,62 @@ namespace RiseSharp.Tests
             Debug.WriteLine(response.Height);
         }
 
-        //[Test]
-        //[Category("Peer")]
-        //public async void TestVoteTransaction()
-        //{
-        //    var secret = "";
-        //    var recId = "5384878184507859808R";
+        [Test]
+        [Category("Peer")]
+        public async void TestVoteTransaction()
+        {
+            var secret = "";
+            var recId = "5384878184507859808R";
 
-        //    long amount = 0;//(long)(0 * Math.Pow(10, 8));
-        //    var trs = new Core.Common.Transaction
-        //    {
-        //        Type = TransactionType.Vote,
-        //        Amount = amount,
-        //        Fee = Constants.Fees.Vote,
-        //        RecipientId = recId,
-        //        Timestamp = TransactionHelper.GetUnixTransactionTime()
-        //        ,Asset = new DelegateVoteAsset
-        //        {
-        //            Votes = new List<string>
-        //            {
-        //                "+d7e6b6e53f4165359c47778eab0c18bf75f3b637c22e3a6762b2e0ce9805746d"
-        //            }
-        //        }
-        //    };
+            long amount = 0;//(long)(0 * Math.Pow(10, 8));
+            var trs = new Core.Common.Transaction
+            {
+                Type = TransactionType.Vote,
+                Amount = amount,
+                Fee = Constants.Fees.Vote,
+                RecipientId = recId,
+                Timestamp = TransactionHelper.GetUnixTransactionTime()
+                ,
+                Asset = new DelegateVoteAsset
+                {
+                    Votes = new List<string>
+                    {
+                        "+d7e6b6e53f4165359c47778eab0c18bf75f3b637c22e3a6762b2e0ce9805746d"
+                    }
+                }
+            };
 
-        //    TransactionHelper.SignTransaction(ref trs, secret);
-        //    var req = new PeerTransactionsRequest { Transaction = trs };
-        //    var response = await _api.SendTransactionAsync(req);
-        //    Debug.WriteLine(response);
-        //    Assert.IsTrue(response.Success, $"Unable to send transaction. Response={response.Error}");
-            
-        //}
-        //[Test]
-        //[Category("Peer")]
-        //public async void TestSendTransaction()
-        //{
-            
-        //    var recId = "5384878184507859808R";
+            TransactionHelper.SignTransaction(ref trs, secret);
+            var req = new PeerTransactionsRequest { Transaction = trs };
+            var response = await _api.SendTransactionAsync(req);
+            Debug.WriteLine(response);
+            Assert.IsTrue(response.Success, $"Unable to send transaction. Response={response.Error}");
 
-        //    long amount = (long)(2 * Math.Pow(10, 8));
-        //    var trs = new Core.Common.Transaction
-        //    {
-        //        Type = TransactionType.Send,
-        //        Amount = amount,
-        //        Fee = Constants.Fees.Send,
-        //        RecipientId = recId,
-        //        Timestamp = TransactionHelper.GetUnixTransactionTime()
-        //    };
+        }
+        [Test]
+        [Category("Peer")]
+        public async void TestSendTransaction()
+        {
+            var recId = "15624059065781496142R";
 
-        //    TransactionHelper.SignTransaction(ref trs, _secret);
+            long amount = (long)(1 * Math.Pow(10, 8));
+            var trs = new Core.Common.Transaction
+            {
+                Type = TransactionType.Send,
+                Amount = amount,
+                Fee = Constants.Fees.Send,
+                RecipientId = recId,
+                Timestamp = TransactionHelper.GetUnixTransactionTime()
+            };
 
-        //    var req = new PeerTransactionsRequest { Transaction = trs };
-        //    var response = await _api.SendTransactionAsync(req);
-        //    Debug.WriteLine(response);
-        //    Assert.IsTrue(response.Success, $"Unable to send transaction. Response={response.Error}");
-        //    Debug.WriteLine(response.Result);
-        //}
+            TransactionHelper.SignTransaction(ref trs, _secret);
+
+            var req = new PeerTransactionsRequest { Transaction = trs };
+            var response = await _api.SendTransactionAsync(req);
+            Debug.WriteLine(response);
+            Assert.IsTrue(response.Success, $"Unable to send transaction. Response={response.Error}");
+            Debug.WriteLine(response.Result);
+        }
         #endregion
 
     }

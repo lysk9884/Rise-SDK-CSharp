@@ -15,27 +15,32 @@ namespace RiseSharp.Tests
     [TestFixture]
     public class TransactionTests
     {
-        private string _secret = "";
-        private string _senderSecret = "";
-        private Account _genesisAccount, _sender;
+        private string _sednerSecret = "cabbage chief join task universe hello grab slush page exit update brisk";
+        private string _receiverSecrete = "";
+
+        private Account _sender;
+        private Account _receiver;
+
         private List<Account> _delegates = new List<Account>();
 
         [TestFixtureSetUp]
         public void InitTests()
         {
-            _secret = CryptoHelper.GenerateSecret();
+            //_sednerSecret = CryptoHelper.GenerateSecret();
 
-            _genesisAccount = AccountHelper.GetAccount(_secret);
+            //_genesisAccount = AccountHelper.GetAccount(_sednerSecret);
 
-            _senderSecret = CryptoHelper.GenerateSecret();
+            //_senderSecret = CryptoHelper.GenerateSecret();
 
-            _sender = AccountHelper.GetAccount(_senderSecret);
+            _sender = AccountHelper.GetAccount(_sednerSecret);
 
-            for (int index = 0; index < 10; index++)
-            {
-                var secret = CryptoHelper.GenerateSecret();
-                _delegates.Add(AccountHelper.GetAccount(secret));
-            }
+            
+
+            //for (int index = 0; index < 10; index++)
+            //{
+            //    var secret = CryptoHelper.GenerateSecret();
+            //    _delegates.Add(AccountHelper.GetAccount(secret));
+            //}
 
         }
         [Test]
@@ -47,7 +52,7 @@ namespace RiseSharp.Tests
                 Amount = 10000000000000000,
                 Fee = 0,
                 Timestamp = 0,
-                RecipientId = _genesisAccount.Address.IdString,
+                RecipientId = _receiver.Address.IdString,
                 SenderId = _sender.Address.IdString,
                 SenderPublicKey = _sender.Address.KeyPair.PublicKey.ToHex(),
             };
@@ -122,7 +127,7 @@ namespace RiseSharp.Tests
         //    var secret = "";
         //    var recId = "5384878184507859808L";
 
-            
+
         //    long amount = (long)(2 * Math.Pow(10, 8));
         //    var trs = new Transaction
         //    {
@@ -164,7 +169,7 @@ namespace RiseSharp.Tests
         //        }
 
         //        var bytes = ms.ToArray();
-                
+
         //        Debug.WriteLine(bytes.Length);
         //        Debug.WriteLine(BitConverter.ToString(bytes));
         //        var hex = bytes.ToHex().ToLower();
@@ -179,39 +184,40 @@ namespace RiseSharp.Tests
 
         //}
 
-        //[Test]
-        //public void TestSignTransaction()
-        //{
-        //    Debug.WriteLine("Sender Secret {0}", _senderSecret);
-        //    Debug.WriteLine("Sender address {0}", _sender.Address.IdString);
-        //    Debug.WriteLine("Recipient Secret {0}", _secret);
-        //    var address = CryptoHelper.GetAddress(_secret);
-        //    Debug.WriteLine("Recipient Id {0}", address.IdString);
+        [Test]
+        public void TestSignTransaction()
+        {
+            Debug.WriteLine("Sender Secret {0}", _sednerSecret);
+            Debug.WriteLine("Sender address {0}", _sender.Address.IdString);
+            //Debug.WriteLine("Recipient Secret {0}", _sednerSecret);
+            //var address = CryptoHelper.GetAddress(_sednerSecret);
+            //Debug.WriteLine("Recipient Id {0}", address.IdString);
 
-        //    var secret = "";
-        //    var recId = "5384878184507859808R";
+            //var secret = "";
+            var recId = "15624059065781496142R";
 
-        //    long amount = (long)(2*Math.Pow(10, 8));
-        //    var trs = new Transaction
-        //    {
-        //        Type = 0,
-        //        Amount = amount,
-        //        Fee = Constants.Fees.Send,
-        //        RecipientId = recId,
-        //        Timestamp = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds
-        //    };
+            long amount = 1;
 
-        //    TransactionHelper.SignTransaction(ref trs, secret);
+            var trs = new Transaction
+            {
+                Type = 0,
+                Amount = amount,
+                Fee = Constants.Fees.Send,
+                RecipientId = recId,
+                Timestamp = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds
+            };
 
-        //    Debug.WriteLine(trs.SenderPublicKey);
-        //    Debug.WriteLine(trs.Signature);
-        //    var trBytes = trs.GetBytes();
+            TransactionHelper.SignTransaction(ref trs, _sednerSecret);
 
-        //    var hex1 = trBytes.ToHex().ToLower();
-        //    Debug.WriteLine(hex1);
+            Debug.WriteLine(trs.SenderPublicKey);
+            Debug.WriteLine(trs.Signature);
+            var trBytes = trs.GetBytes();
+
+            var hex1 = trBytes.ToHex().ToLower();
+            Debug.WriteLine(hex1);
 
 
-        //    Debug.WriteLine(trs.ToString());
-        //}
+            Debug.WriteLine(trs.ToString());
+        }
     }
 }

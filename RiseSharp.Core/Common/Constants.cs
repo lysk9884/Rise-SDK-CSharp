@@ -24,13 +24,13 @@ namespace RiseSharp.Core.Common
 
         public const string DefaultHost = "wallet.rise.vision";
         public const string DefaultHostIp = "161.202.112.35";
-        public const int DefaultPort = 8000;
+        public const int DefaultPort = 5566;
         public const bool DefaultUseHttps = true;
 
-        public const string DefaultNethash = "198f2b61a8eb95fbeed58b8216780b68f697f26b849acf00c8c93bb9b24f783d";
+        public const string DefaultNethash = "cd8171332c012514864edd8eb6f68fc3ea6cb2afbaf21c56e12751022684cea5";
         public const int DefaultState = 2;
-        public const string DefaultOs = " linux3.19.0-59-generic";
-        public const string DefaultVersion = "0.3.1";
+        public const string DefaultOs = "rise-desktop";
+        public const string DefaultVersion = "0.1.1";
 
         public const string AddressSuffix = "R";
 
