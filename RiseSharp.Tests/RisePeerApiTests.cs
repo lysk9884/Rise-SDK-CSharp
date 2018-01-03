@@ -18,7 +18,7 @@ namespace RiseSharp.Tests
     public class RisePeerApiTests
     {
         IRisePeerApi _api;
-        private string _secret;
+        private string _secret, _secondSecret;
 
         [TestFixtureSetUp]
         public void InitTests()
@@ -31,6 +31,7 @@ namespace RiseSharp.Tests
             });
 
             _secret = "cabbage chief join task universe hello grab slush page exit update brisk";
+            _secondSecret = "process sheriff sea august atom parrot immune finger ticket clean crater celery";
         }
 
         #region Peer related tests
@@ -102,7 +103,7 @@ namespace RiseSharp.Tests
         {
             var recId = "15624059065781496142R";
 
-            long amount = (long)(1 * Math.Pow(10, 8));
+            long amount = (long)(0.1f * Math.Pow(10, 8));
             var trs = new Core.Common.Transaction
             {
                 Type = TransactionType.Send,

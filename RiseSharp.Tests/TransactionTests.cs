@@ -15,7 +15,7 @@ namespace RiseSharp.Tests
     [TestFixture]
     public class TransactionTests
     {
-        private string _sednerSecret = "cabbage chief join task universe hello grab slush page exit update brisk";
+        private string _senderSecret = "cabbage chief join task universe hello grab slush page exit update brisk";
         private string _receiverSecrete = "";
 
         private Account _sender;
@@ -26,13 +26,13 @@ namespace RiseSharp.Tests
         [TestFixtureSetUp]
         public void InitTests()
         {
-            //_sednerSecret = CryptoHelper.GenerateSecret();
+            //_senderSecret = CryptoHelper.GenerateSecret();
 
-            //_genesisAccount = AccountHelper.GetAccount(_sednerSecret);
+            //_genesisAccount = AccountHelper.GetAccount(_senderSecret);
 
             //_senderSecret = CryptoHelper.GenerateSecret();
 
-            _sender = AccountHelper.GetAccount(_sednerSecret);
+            _sender = AccountHelper.GetAccount(_senderSecret);
 
             
 
@@ -187,16 +187,16 @@ namespace RiseSharp.Tests
         [Test]
         public void TestSignTransaction()
         {
-            Debug.WriteLine("Sender Secret {0}", _sednerSecret);
+            Debug.WriteLine("Sender Secret {0}", _senderSecret);
             Debug.WriteLine("Sender address {0}", _sender.Address.IdString);
-            //Debug.WriteLine("Recipient Secret {0}", _sednerSecret);
-            //var address = CryptoHelper.GetAddress(_sednerSecret);
+            //Debug.WriteLine("Recipient Secret {0}", _senderSecret);
+            //var address = CryptoHelper.GetAddress(_senderSecret);
             //Debug.WriteLine("Recipient Id {0}", address.IdString);
 
             //var secret = "";
             var recId = "15624059065781496142R";
 
-            long amount = 1;
+            long amount = (long)(1 * Math.Pow(10, 8));
 
             var trs = new Transaction
             {
@@ -207,7 +207,7 @@ namespace RiseSharp.Tests
                 Timestamp = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds
             };
 
-            TransactionHelper.SignTransaction(ref trs, _sednerSecret);
+            TransactionHelper.SignTransaction(ref trs, _senderSecret);
 
             Debug.WriteLine(trs.SenderPublicKey);
             Debug.WriteLine(trs.Signature);

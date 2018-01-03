@@ -25,7 +25,7 @@ namespace RiseSharp.Core.Helpers
     public static class TransactionHelper
     {
        
-        public static void SignTransaction(ref Transaction trs, string secret)
+        public static void SignTransaction(ref Transaction trs, string secret , string secondScret = "")
         {
             var address = CryptoHelper.GetAddress(secret);
             var keys = address.KeyPair;
