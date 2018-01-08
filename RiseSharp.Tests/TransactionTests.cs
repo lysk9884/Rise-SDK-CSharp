@@ -33,8 +33,7 @@ namespace RiseSharp.Tests
             //_senderSecret = CryptoHelper.GenerateSecret();
 
             _sender = AccountHelper.GetAccount(_senderSecret);
-
-            
+            _receiver = AccountHelper.GetAccount(_senderSecret);
 
             //for (int index = 0; index < 10; index++)
             //{
@@ -56,7 +55,6 @@ namespace RiseSharp.Tests
                 SenderId = _sender.Address.IdString,
                 SenderPublicKey = _sender.Address.KeyPair.PublicKey.ToHex(),
             };
-
         }
 
         [Test]
@@ -194,7 +192,7 @@ namespace RiseSharp.Tests
             //Debug.WriteLine("Recipient Id {0}", address.IdString);
 
             //var secret = "";
-            var recId = "15624059065781496142R";
+            var recId = "1103307164606891969R";
 
             long amount = (long)(1 * Math.Pow(10, 8));
 

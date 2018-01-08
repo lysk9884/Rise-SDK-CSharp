@@ -51,6 +51,9 @@ namespace RiseSharp.Core.Common
         [DataMember(Name = "signature")]
         public string Signature { get; set; }
 
+        [DataMember(Name = "signatures")]
+        public object Signatures { get; set; }
+
         [DataMember(Name = "signSignature")]
         public string SignSignature { get; set; }
 

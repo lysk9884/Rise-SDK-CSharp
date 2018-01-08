@@ -56,9 +56,9 @@ namespace RiseSharp.Core.Api
         /// Gets peer list from remote peer synchronously
         /// </summary>
         /// <returns>Peers list</returns>
-        public PeerListResponse GetPeerList()
+        public PeerListResponse GetPeerList(PeerBaseRequest req)
         {
-            var response = GetPeerListAsync().GetAwaiter().GetResult();
+            var response = GetPeerListAsync(req).GetAwaiter().GetResult();
             return response;
         }
 
@@ -66,9 +66,8 @@ namespace RiseSharp.Core.Api
         /// Gets peer list from remote peer asynchronously
         /// </summary>
         /// <returns>Peers list</returns>
-        public async Task<PeerListResponse> GetPeerListAsync()
+        public async Task<PeerListResponse> GetPeerListAsync(PeerBaseRequest req)
         {
-            var req = new PeerBaseRequest();
             _url.Path = Constants.PeerGetList;
             var headerValues = req.GetHeaderValues().ToList();
             AddHeaders(headerValues);
@@ -81,9 +80,9 @@ namespace RiseSharp.Core.Api
         /// Gets peer blocks from remote peer synchronously
         /// </summary>
         /// <returns>Blocks list</returns>
-        public PeerBlocksResponse GetPeerBlocks()
+        public PeerBlocksResponse GetPeerBlocks(PeerBaseRequest req)
         {
-            var response = GetPeerBlocksAsync().GetAwaiter().GetResult();
+            var response = GetPeerBlocksAsync(req).GetAwaiter().GetResult();
             return response;
         }
 
@@ -91,9 +90,9 @@ namespace RiseSharp.Core.Api
         /// Gets peer blocks from remote peer asynchronously
         /// </summary>
         /// <returns>Blocks list</returns>
-        public async Task<PeerBlocksResponse> GetPeerBlocksAsync()
+        public async Task<PeerBlocksResponse> GetPeerBlocksAsync(PeerBaseRequest req)
         {
-            var req = new PeerBaseRequest();
+            //var req = new PeerBaseRequest();
             _url.Path = Constants.PeerGetBlocks;
             var headerValues = req.GetHeaderValues().ToList();
             AddHeaders(headerValues);
@@ -106,9 +105,9 @@ namespace RiseSharp.Core.Api
         /// Gets height from a remote node
         /// </summary>
         /// <returns>Height</returns>
-        public async Task<PeerHeightResponse> GetPeerHeightAsync()
+        public async Task<PeerHeightResponse> GetPeerHeightAsync(PeerBaseRequest req)
         {
-            var req = new PeerBaseRequest();
+            //var req = new PeerBaseRequest();
             _url.Path = Constants.PeerGetHeight;
             var headerValues = req.GetHeaderValues().ToList();
             AddHeaders(headerValues);

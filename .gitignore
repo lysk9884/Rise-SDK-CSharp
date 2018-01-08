@@ -1,0 +1,25 @@
+ # ===================================== #
+# Visual Studio / generated #
+# ===================================== #
+[Ee]xported[Oo]bj/
+.vs/
+*/bin/debug/*.*
+*/obj/debug/*.*
+*.sln.*
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db 
+
+# ============ #
+# ETC Files	   #
+# ============ #
+patch.diff
+

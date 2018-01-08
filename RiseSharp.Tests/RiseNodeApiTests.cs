@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using RiseSharp.Core.Api;
 using RiseSharp.Core.Api.Messages.Node;
 using RiseSharp.Core.Api.Models;
@@ -21,9 +22,9 @@ namespace RiseSharp.Tests
         {
             _api = new RiseNodeApi(new ApiInfo
             {
-                //Host = "yourhostip",
-                //Port = "port"
-               // UseHttps = true
+                Host = "testnode1.rise.vision",
+                Port = 5566,
+                UseHttps = false
             });
             /*
              * 
@@ -31,8 +32,9 @@ namespace RiseSharp.Tests
              * through web interface or /api/accounts/open. Account tests always fail if no session created on the remote node.
              * The below code opens an account with a secret. The response returns account details.
              */
-            _secret = "cabbage chief join task universe hello grab slush page exit update brisk";
-            _secondSecret = "process sheriff sea august atom parrot immune finger ticket clean crater celery";
+            _secret = "cabbage chief join task universe hello grab slush page exit update brisk"; // mainNet
+            //_secret = "city penalty metal head silent city bar media slab walk pencil pear"; //testNet
+            //_secondSecret = "process sheriff sea august atom parrot immune finger ticket clean crater celery"; //testNet
 
             var response =  _api.OpenAccount(new OpenAccountRequest
             {
@@ -43,14 +45,14 @@ namespace RiseSharp.Tests
             Assert.IsTrue(response.Success, " Couldn't open account ");
             _account = response.Account;
 
-            response = _api.OpenAccount(new OpenAccountRequest
-            {
-                Secret = _secondSecret
-            });
+            //response = _api.OpenAccount(new OpenAccountRequest
+            //{
+            //    Secret = _secondSecret
+            //});
 
-            Debug.WriteLine("Second account open {0}", response);
-            Assert.IsTrue(response.Success, " Couldn't open second account ");
-            _secondAccount = response.Account;
+            //Debug.WriteLine("Second account open {0}", response);
+            //Assert.IsTrue(response.Success, " Couldn't open second account ");
+            //_secondAccount = response.Account;
 
 
         }
@@ -404,24 +406,25 @@ namespace RiseSharp.Tests
                 Assert.Pass("No unconfirmed transactions found");
         }
         */
-        /* Disabling test. Account requires balances
-         * 
+        /* Disabling test. Account requires balances*/ 
         [Test]
         [Category("Transaction")]
         public async void TestAddTransaction()
         {
+            long amount = (long)(1 * Math.Pow(10, 8));
+
             var response = await _api.AddTransactionAsync(new TransactionAddRequest
             {
                 Secret = _secret,
-                Amount = 123,
-                RecipientId = "1212121212L",
+                Amount = amount,
+                RecipientId = "5259823730116946290R",
                 PublicKey = _account.PublicKey,
+                SecondSecret = "0",
                
             });
             Debug.WriteLine(response);
             Assert.IsTrue(response.Success, $"Unable to add transaction. Response={response}");
         }
-        */
         #endregion
 
         #region Loader api related tests

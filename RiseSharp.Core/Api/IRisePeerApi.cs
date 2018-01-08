@@ -18,27 +18,27 @@ namespace RiseSharp.Core.Api
         /// Gets peer list from remote peer synchronously
         /// </summary>
         /// <returns>Peers list</returns>
-        PeerListResponse GetPeerList();
+        PeerListResponse GetPeerList(PeerBaseRequest req);
 
         /// <summary>
         /// Gets peer list from remote peer asynchronously
         /// </summary>
         /// <returns>Peers list</returns>
-        Task<PeerListResponse> GetPeerListAsync();
+        Task<PeerListResponse> GetPeerListAsync(PeerBaseRequest req);
 
         /// <summary>
         /// Gets peer blocks from remote peer synchronously
         /// </summary>
         /// <returns>Blocks list</returns>
-        PeerBlocksResponse GetPeerBlocks();
+        PeerBlocksResponse GetPeerBlocks(PeerBaseRequest req);
 
         /// <summary>
         /// Gets peer blocks from remote peer asynchronously
         /// </summary>
         /// <returns>Blocks list</returns>
-        Task<PeerBlocksResponse> GetPeerBlocksAsync();
+        Task<PeerBlocksResponse> GetPeerBlocksAsync(PeerBaseRequest req);
 
-        Task<PeerHeightResponse> GetPeerHeightAsync();
+        Task<PeerHeightResponse> GetPeerHeightAsync(PeerBaseRequest req);
         Task<PeerTransactionsResponse> SendTransactionAsync(PeerTransactionsRequest req);
     }
 }
