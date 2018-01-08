@@ -32,9 +32,5 @@ namespace RiseSharp.Core.Api.Messages.Node
 
         [DataMember(Name = "secondSecret")]
         public string SecondSecret { get; set; }
-
-        //[DataMember(Name = "multisigAccountPublicKey")]
-        //public string MultiSigAccountPublicKey { get; set; }
-
     }
 }
